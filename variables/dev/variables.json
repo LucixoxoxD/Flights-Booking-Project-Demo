@@ -1,6 +1,6 @@
 {
     "env": "dev",
-    "gcs_bucket": "airflow-projetcs-gds-devv",
+    "gcs_bucket": "airflow-projects-gds-devv",
     "bq_project": "durable-cycle-469408-u1",
     "bq_dataset": "flight_data_dev",
     "tables": {

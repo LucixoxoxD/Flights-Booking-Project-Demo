@@ -11,7 +11,7 @@ default_args = {
     'depends_on_past': False,
     'retries': 1,
     'retry_delay': timedelta(minutes=5),
-    'start_date': datetime(2025, 9, 30),
+    'start_date': datetime(2025, 10, 1),
 }
 
 # Define the DAG
@@ -24,7 +24,7 @@ with DAG(
 
     # Fetch environment variables
     env = Variable.get("env", default_var="dev")
-    gcs_bucket = Variable.get("gcs_bucket", default_var="airflow-projetcs-gds-devv")
+    gcs_bucket = Variable.get("gcs_bucket", default_var="airflow-projects-gds-devv")
     bq_project = Variable.get("bq_project", default_var="durable-cycle-469408-u1")
     bq_dataset = Variable.get("bq_dataset", default_var=f"flight_data_{env}")
     tables = Variable.get("tables", deserialize_json=True)
@@ -68,7 +68,7 @@ with DAG(
         },
         "environment_config": {
             "execution_config": {
-                "service_account": "7214393361917-compute@developer.gserviceaccount.com",
+                "service_account": "214393361917-compute@developer.gserviceaccount.com",
                 "network_uri": f"projects/{bq_project}/global/networks/default",
                 "subnetwork_uri": f"projects/{bq_project}/regions/us-central1/subnetworks/default",
             }
